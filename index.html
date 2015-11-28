@@ -6,7 +6,7 @@
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Christmas for Syria" />
-    <meta property="og:description" content="A simple way to share your Christmas with the people of Syria in the form of donation" />
+    <meta property="og:description" content="A simple way to share your Christmas with the people of Syria in the form of donation to vetted organizations on the ground." />
     <meta property="og:image" content="http://www.christmasforsyria.org/img/fb-thumb.jpg" />
     <meta property="fb:app_id" content="961094450629430"/>
     <meta property="og:url" content="http://christmasforsyria.org" />
@@ -37,7 +37,25 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        
+        h2 {
+            white-space: normal;
+        }
+        .choose-type label{
+            
+            background: hsla(0,0%,100%,.4);
+        }
+        .choose-type.btn-group{
+            margin: 0px;
+        }
+        .choose-type label.active{
+            background: #fefefe;
+        }
+        .choose-type label{
+            border-color: #999;
+        }
+        .choose-type label h2{
+            color: #222;
+        }
         #guests {
             font-size: 30px;
             text-align: right;
@@ -70,9 +88,13 @@
             margin: 15px;
         }
         
+        
         .btn-group-vertical>.btn,
         .btn-group>.btn {
             font-size: 35px;
+        }
+        .btn-group input[type="number"] {
+            font-size: 29px;
         }
         
         .panel-body a {
@@ -155,13 +177,13 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
+                    <li class="hidden">
                         <a class="page-scroll" href="#guests-section">Guests</a>
                     </li>
-                    <li>
+                    <li class="hidden">
                         <a class="page-scroll" href="#your-meal">Your Meal</a>
                     </li>
-                    <li>
+                    <li class="hidden">
                         <a class="page-scroll" href="#share">Share</a>
                     </li>
                 </ul>
@@ -178,8 +200,18 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Christmas for Syria</h1>
-                        <p class="intro-text">A simple way to share your Christmas with the people of Syria and the surrounding region.</p>
-                        <a href="#guests-section" class="btn btn-circle page-scroll">
+                        
+                        <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" id="share-meal">
+                                <input type="checkbox" autocomplete="off" value="1.5"><h2>Share the value of your meal</h2>
+                            </label>
+                        </div>
+                        <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" id="share-gifts">
+                                <input type="checkbox" autocomplete="off" value=".75"><h2>Share the value of your gifts</h2>
+                            </label>
+                        </div>
+                        <a href="" class="btn btn-circle page-scroll s-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -191,7 +223,7 @@
 
 
     <!-- Download Section -->
-    <section id="guests-section" class="content-section text-center">
+    <section id="guests-section" class="content-section text-center hidden">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -202,7 +234,8 @@
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
     </section>
-    <section id="your-meal" class="content-section  text-center col-sm-10 col-sm-offset-1">
+    
+    <section id="your-meal" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
         <h2>What food are you serving?</h2>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
@@ -323,20 +356,160 @@
             </label>
         </div>
         <p></p>
-        <a href="#donation" class="btn btn-circle page-scroll">
+        <!--<a href="#donation" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
-        </a>
+        </a>-->
     </section>
-    <section id="donation" class="content-section  text-center col-sm-10 col-sm-offset-1">
-        <h3>Your meal is worth</h3>
-        <div class="col-sm-12 well well-large">
-            <div class="col-sm-6">
-                <h2>Total $<span id="total"></span>.00</h2>
-                <span>collect $<span id="each"></span>.00 from each guest</span>
+    <section id="your-gifts" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
+        <h2>What gifts will be under your tree?</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="400"> Game Console
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="400"> Drone
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Camera
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="60"> Sled
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Plush Toy
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="200"> Instrument
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Smart Phone
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="25"> Stocking Stuffers
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="40">Toy Train
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Tablet
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="goose" value="45"> Shirts
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="turkey" value="40"> Pants
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="duck" value="50"> Sweater
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="40"> Pajamas
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Scarf
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Chocolate
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="50"> Gift Card
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Slippers
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="25"> Neck Tie
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="35"> Book
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="400"> Hoverboard
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="350"> TV
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="1100"> Big Screen
+            </label>
+            
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                    <input type="checkbox" autocomplete="off" value="150"> Jewelry
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" autocomplete="off" value="700"> Diamond
+                </label>
             </div>
-            <div class="col-sm-6">
+        <!--<div class="clearfix"></div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="0">Gift Cards
+            </label>
+            <label class="btn btn-default">
+                <input type="number" style="width:100px;" autocomplete="off" max="100" min="0" placeholder="# of"> 
+            </label>
+        </div>-->
+        <p></p>
+        <!--<a href="#donation" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>-->
+    </section>
+    <section id="donation" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
+        <h3>Your holiday is worth around</h3>
+        <div class="col-sm-12 well well-large">
+            <div class="col-sm-4">
+                <h2>Total $<span id="total"></span>.00</h2>
+                <span id="each-span1" class="hidden">$<span id="each"></span>.00 for each meal</span>
+            </div>
+            <div class="col-sm-4">
                 <h2>Half $<span id="half"></span>.00</h2>
-                <span>collect $<span id="each-half"></span>.00 from each guest</span>
+                <span id="each-span2" class="hidden">$<span id="each-half"></span>.00 for each meal</span>
+            </div>
+            <div class="col-sm-4">
+                <h2>10% $<span id="tithe"></span>.00</h2>
             </div>
         </div>
         <p></p>
@@ -347,7 +520,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="share" class=" col-sm-10 col-sm-offset-1">
+    <section id="share" class="content-section col-sm-10 col-sm-offset-1">
         <div class="col-sm-12">
             <h3>Ways to share</h3>
             <div class="panel-group" id="accordion">
@@ -458,6 +631,8 @@
         $(document).ready(function () {
             var guests = 1;
             var dishTotal = 0;
+            var dishHalf = 0;
+            var giftTotal = 0;
             var total = 0
             var half = 0;
             var each = 0;
@@ -466,16 +641,43 @@
             $('#half').text(half);
             $('#each').text(each);
             $('#each-half').text(eachHalf);
+            $('#share-meal').on('click', function (val) {
+                if($.inArray('active', val.currentTarget.classList) == -1) {
+                    $('#donation').removeClass('hidden');
+                    $('#your-meal').removeClass('hidden');
+                    $('#guests-section').removeClass('hidden');
+                    $('#each-span1').removeClass('hidden');
+                    $('#each-span2').removeClass('hidden');
+                    
+                } else {
+                    $('#your-meal').addClass('hidden');
+                    $('#guests-section').addClass('hidden');
+                    $('#each-span1').addClass('hidden');
+                    $('#each-span2').addClass('hidden');
+                    dishTotal = 0;
+                }
+            });
+            $('#share-gifts').on('click', function (val) {
+                if($.inArray('active', val.currentTarget.classList) == -1) {
+                    $('#donation').removeClass('hidden');
+                    $('#your-gifts').removeClass('hidden');
+                } else {
+                    $('#your-gifts').addClass('hidden');
+                    giftTotal = 0;
+                }
+            });
             $('#guests').on('change', function () {
                 guests = $('#guests').val();
-                total = parseInt(dishTotal * guests);
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                 half = parseInt(total / 2);
-                each = parseInt(total / guests);
-                eachHalf = parseInt(half / guests);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal / 2);
                 $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
                 $('#half').text(half);
                 $('#each').text(each);
                 $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
             })
             $('#your-meal div label').on('click', function (val) {
                 if ($.inArray('active', val.currentTarget.classList) == -1) {
@@ -483,18 +685,36 @@
                 } else {
                     dishTotal -= parseFloat(val.currentTarget.childNodes[1].value);
                 }
-                console.log(dishTotal, guests)
                 guests = parseInt(guests);
-                total = parseInt(dishTotal * guests);
-                console.log(total, 'tot');
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                 half = parseInt(total / 2);
-                each = parseInt(total / guests);
-                console.log(total, guests, each, 'each');
-                eachHalf = parseInt(half / guests);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal/2);
                 $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
                 $('#half').text(half);
                 $('#each').text(each);
                 $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
+
+            })
+            $('#your-gifts div label').on('click', function (val) {
+                if ($.inArray('active', val.currentTarget.classList) == -1) {
+                    giftTotal += parseFloat(val.currentTarget.childNodes[1].value);
+                } else {
+                    giftTotal -= parseFloat(val.currentTarget.childNodes[1].value);
+                }
+                guests = parseInt(guests);
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
+                half = parseInt(total / 2);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal/2);
+                $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
+                $('#half').text(half);
+                $('#each').text(each);
+                $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
 
             })
         });

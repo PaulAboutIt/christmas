@@ -656,15 +656,31 @@
                     $('#guests-section').removeClass('hidden');
                     $('#each-span1').removeClass('hidden');
                     $('#each-span2').removeClass('hidden');
-                    total = parseInt(giftTotal) + parseInt(dishTotal * guests);
+                    if(isGift) {
+                        total = parseInt(giftTotal) + parseInt(dishTotal * guests);
+                    } else {
+                        total = parseInt(dishTotal * guests);
+                    }
                     half = parseInt(total / 2);
                     $('#total').text(total);
                     $('#tithe').text(parseInt(total/10));
                     $('#half').text(half);
                 } else {
                     isMeal = false
-                    if (isGift)
+                    if (isGift) {
                         $('.s-scroll').attr('href', '#your-gifts');
+                    } else {
+                        total = 0;
+                        half = 0;
+                        $('#total').text(total);
+                        $('#tithe').text(parseInt(total/10));
+                        $('#half').text(half);
+                        $('#your-meal').addClass('hidden');
+                        $('#guests-section').addClass('hidden');
+                        $('#each-span1').addClass('hidden');
+                        $('#each-span2').addClass('hidden');
+                        return
+                    }
                     $('#your-meal').addClass('hidden');
                     $('#guests-section').addClass('hidden');
                     $('#each-span1').addClass('hidden');
@@ -683,19 +699,31 @@
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isGift = true;
                     $('.s-scroll').attr('href', '#your-gifts');
-                    if (isMeal)
+                    if (isMeal) {
                         $('.s-scroll').attr('href', '#guests-section');
+                        total = parseInt(dishTotal * guests) + parseInt(giftTotal);
+                    } else {
+                        total = parseInt(giftTotal);
+                    }
                     $('#donation').removeClass('hidden');
                     $('#your-gifts').removeClass('hidden');
-                    total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                     half = parseInt(total / 2);
                     $('#total').text(total);
                     $('#tithe').text(parseInt(total/10));
                     $('#half').text(half);
                 } else {
                     isGift = false;
-                    if (isMeal)
+                    if (isMeal) {
                         $('.s-scroll').attr('href', '#guests-section');
+                    } else {
+                        total = 0;
+                        half = 0;
+                        $('#total').text(total);
+                        $('#tithe').text(parseInt(total/10));
+                        $('#half').text(half);
+                        $('#your-gifts').addClass('hidden');
+                        return
+                    }
                     $('#your-gifts').addClass('hidden');
                     total = parseInt(dishTotal * guests);
                     half = parseInt(total / 2);

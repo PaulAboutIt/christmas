@@ -656,7 +656,11 @@
                     $('#guests-section').removeClass('hidden');
                     $('#each-span1').removeClass('hidden');
                     $('#each-span2').removeClass('hidden');
-                    console.log('foo')
+                    total = parseInt(giftTotal) + parseInt(dishTotal * guests);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
                 } else {
                     isMeal = false
                     if (isGift)
@@ -665,7 +669,12 @@
                     $('#guests-section').addClass('hidden');
                     $('#each-span1').addClass('hidden');
                     $('#each-span2').addClass('hidden');
-                    dishTotal = 0;
+                    
+                    total = parseInt(giftTotal);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
                 }
                 
             });
@@ -678,12 +687,21 @@
                         $('.s-scroll').attr('href', '#guests-section');
                     $('#donation').removeClass('hidden');
                     $('#your-gifts').removeClass('hidden');
+                    total = parseInt(dishTotal * guests) + parseInt(giftTotal);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
                 } else {
                     isGift = false;
                     if (isMeal)
                         $('.s-scroll').attr('href', '#guests-section');
                     $('#your-gifts').addClass('hidden');
-                    giftTotal = 0;
+                    total = parseInt(dishTotal * guests);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
                 }
             });
             $('#guests').on('change', function () {

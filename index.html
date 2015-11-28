@@ -79,9 +79,11 @@
         .well div {
             margin-bottom: 20px;
         }
-        
+        .panel {
+            background: none;
+        }
         .panel-body {
-            background: #111;
+            background: hsla(0,0%,0%,.6);
         }
         
         .btn-group {
@@ -200,7 +202,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Christmas for Syria</h1>
-                        
+                        <p>Choose to share a protion of the value of your meal or gifts (or both) with the families in and around Syria. The organizations listed have all been vetted by <a href="pri.org">Public Radio International</a></p>
                         <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
                             <label class="btn btn-default" id="share-meal">
                                 <input type="checkbox" autocomplete="off" value="1.5"><h2>Share the value of your meal</h2>
@@ -211,7 +213,7 @@
                                 <input type="checkbox" autocomplete="off" value=".75"><h2>Share the value of your gifts</h2>
                             </label>
                         </div>
-                        <a href="" class="btn btn-circle page-scroll s-scroll">
+                        <a href="#share" class="btn btn-circle page-scroll s-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -236,7 +238,7 @@
     </section>
     
     <section id="your-meal" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
-        <h2>What food are you serving?</h2>
+        <h2>What are you serving?</h2>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value="4"> Organic
@@ -629,6 +631,9 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
+            var isMeal = false;
+            var isGift = false;
+            var nextSection = '#share'
             var guests = 1;
             var dishTotal = 0;
             var dishHalf = 0;
@@ -642,26 +647,41 @@
             $('#each').text(each);
             $('#each-half').text(eachHalf);
             $('#share-meal').on('click', function (val) {
+                $('.s-scroll').attr('href', '#share');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
+                    isMeal = true;
+                    $('.s-scroll').attr('href', '#guests-section');
                     $('#donation').removeClass('hidden');
                     $('#your-meal').removeClass('hidden');
                     $('#guests-section').removeClass('hidden');
                     $('#each-span1').removeClass('hidden');
                     $('#each-span2').removeClass('hidden');
-                    
+                    console.log('foo')
                 } else {
+                    isMeal = false
+                    if (isGift)
+                        $('.s-scroll').attr('href', '#your-gifts');
                     $('#your-meal').addClass('hidden');
                     $('#guests-section').addClass('hidden');
                     $('#each-span1').addClass('hidden');
                     $('#each-span2').addClass('hidden');
                     dishTotal = 0;
                 }
+                
             });
             $('#share-gifts').on('click', function (val) {
+                $('.s-scroll').attr('href', '#share');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
+                    isGift = true;
+                    $('.s-scroll').attr('href', '#your-gifts');
+                    if (isMeal)
+                        $('.s-scroll').attr('href', '#guests-section');
                     $('#donation').removeClass('hidden');
                     $('#your-gifts').removeClass('hidden');
                 } else {
+                    isGift = false;
+                    if (isMeal)
+                        $('.s-scroll').attr('href', '#guests-section');
                     $('#your-gifts').addClass('hidden');
                     giftTotal = 0;
                 }
@@ -716,7 +736,7 @@
                 $('#each-half').text(eachHalf);
                 $('#donation').removeClass('hidden');
 
-            })
+            });
         });
     </script>
     <script>

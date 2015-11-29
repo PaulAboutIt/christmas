@@ -143,6 +143,19 @@
             -moz-transform-origin: top left;
             -webkit-transform-origin: top left;
         }
+        .s-scroll {
+            opacity: 0;
+        }
+        .pulsate {
+            -webkit-animation: pulsate 2s ease-out;
+            -webkit-animation-iteration-count: infinite; 
+            
+        }
+        @-webkit-keyframes pulsate {
+            0% {-webkit-transform: scale(1, 1); opacity: 0.7; background: hsla(0,0%,100%,0)}
+            50% {-webkit-transform: scale(1.05, 1.05); opacity: 1; background: hsla(0,0%,100%,.2)}
+            100% {-webkit-transform: scale(1, 1); opacity: 0.7; background: hsla(0,0%,100%,0)}
+        }
     </style>
 
 </head>
@@ -689,6 +702,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="dist/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
     <script>
         $(document).ready(function () {
             var isMeal = false;
@@ -708,6 +729,8 @@
             $('#each-half').text(eachHalf);
             $('#share-meal').on('click', function (val) {
                 $('.s-scroll').attr('href', '#share');
+                $('.s-scroll').addClass('pulsate');
+                $('.s-scroll').removeClass('hidden');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isMeal = true;
                     $('.s-scroll').attr('href', '#guests-section');
@@ -732,6 +755,7 @@
                     } else {
                         total = 0;
                         half = 0;
+                        $('.s-scroll').addClass('hidden');
                         $('#total').text(total);
                         $('#tithe').text(parseInt(total/10));
                         $('#half').text(half);
@@ -756,6 +780,8 @@
             });
             $('#share-gifts').on('click', function (val) {
                 $('.s-scroll').attr('href', '#share');
+                $('.s-scroll').addClass('pulsate');
+                $('.s-scroll').removeClass('hidden');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isGift = true;
                     $('.s-scroll').attr('href', '#your-gifts');
@@ -778,6 +804,7 @@
                     } else {
                         total = 0;
                         half = 0;
+                        $('.s-scroll').addClass('hidden');
                         $('#total').text(total);
                         $('#tithe').text(parseInt(total/10));
                         $('#half').text(half);
@@ -871,14 +898,7 @@
 
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+    
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>

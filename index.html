@@ -145,6 +145,7 @@
         }
         .s-scroll {
             opacity: 0;
+            
         }
         .pulsate {
             -webkit-animation: pulsate 2s ease-out;
@@ -156,6 +157,7 @@
             50% {-webkit-transform: scale(1.05, 1.05); opacity: 1; background: hsla(0,0%,100%,.2)}
             100% {-webkit-transform: scale(1, 1); opacity: 0.7; background: hsla(0,0%,100%,0)}
         }
+        
     </style>
 
 </head>
@@ -220,16 +222,16 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Christmas for Syria</h1>
-                        <p>Share a portion of your Christmas with the families of Syria. The organizations listed have all been vetted by <a href="pri.org">PRI's The World</a></p>
+                        <p class="intro-blurb">Share a portion of your Christmas with the families of Syria. The organizations listed have all been vetted by <a href="pri.org">PRI's The World</a></p>
                         <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
                             <label class="btn btn-default" id="share-meal">
-                                <input type="checkbox" autocomplete="off" value="1.5"><h2>Share the value of your meal</h2>
+                                <input type="checkbox" autocomplete="off" value="0"><h2>Share the value of your meal</h2>
                                 <p>click here</p>
                             </label>
                         </div>
                         <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
                             <label class="btn btn-default" id="share-gifts">
-                                <input type="checkbox" autocomplete="off" value=".75"><h2>Share the value of your gifts</h2>
+                                <input type="checkbox" autocomplete="off" value="0"><h2>Share the value of your gifts</h2>
                                 <p>click here</p>
                             </label>
                         </div>
@@ -707,6 +709,7 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-scrollto.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
@@ -730,12 +733,15 @@
             $('#share-meal').on('click', function (val) {
                 $('.s-scroll').attr('href', '#share');
                 $('.s-scroll').addClass('pulsate');
+                
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isMeal = true;
+                    
                     $('.s-scroll').attr('href', '#guests-section');
                     $('#donation').removeClass('hidden');
                     $('#your-meal').removeClass('hidden');
                     $('#guests-section').removeClass('hidden');
+                    $('#guests-section').ScrollTo();
                     $('#each-span1').removeClass('hidden');
                     $('#each-span2').removeClass('hidden');
                     if(isGift) {
@@ -769,12 +775,13 @@
                     $('#guests-section').addClass('hidden');
                     $('#each-span1').addClass('hidden');
                     $('#each-span2').addClass('hidden');
-                    
                     total = parseInt(giftTotal);
                     half = parseInt(total / 2);
                     $('#total').text(total);
                     $('#tithe').text(parseInt(total/10));
                     $('#half').text(half);
+                    if (isGift) 
+                        $('#your-gifts').ScrollTo();
                 }
                 
             });
@@ -786,9 +793,12 @@
                     $('.s-scroll').attr('href', '#your-gifts');
                     if (isMeal) {
                         $('.s-scroll').attr('href', '#guests-section');
+                        $('#guests-section').ScrollTo();
                         total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                     } else {
                         total = parseInt(giftTotal);
+                        $('#your-gifts').removeClass('hidden');
+                        $('#your-gifts').ScrollTo();
                     }
                     $('#donation').removeClass('hidden');
                     $('#your-gifts').removeClass('hidden');
@@ -817,6 +827,8 @@
                     $('#total').text(total);
                     $('#tithe').text(parseInt(total/10));
                     $('#half').text(half);
+                    if (isMeal)
+                        $('#guests-section').ScrollTo();
                 }
             });
             $('#guests').on('change', function () {

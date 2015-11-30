@@ -923,7 +923,9 @@
                 $('#donation').removeClass('hidden');
 
             });
-            $('.panel-body').on('click', function(e) {
+            $('.panel-body a').on('click', function(e) {
+                e.preventDefault();
+                
                 ga('send', {
                   hitType: 'click',
                   eventCategory: 'Orgs',

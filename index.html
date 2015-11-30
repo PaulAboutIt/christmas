@@ -43,6 +43,9 @@
         h2 {
             white-space: normal;
         }
+        .sg-nav, .sm-nav {
+            cursor: pointer
+        }
         .choose-type label{
             
             background: hsla(0,0%,100%,.4);
@@ -182,7 +185,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top hidden-xs" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -199,14 +202,11 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="hidden">
-                        <a class="page-scroll" href="#guests-section">Guests</a>
+                    <li class="hidden sm-nav">
+                        <a>Share Meal</a>
                     </li>
-                    <li class="hidden">
-                        <a class="page-scroll" href="#your-meal">Your Meal</a>
-                    </li>
-                    <li class="hidden">
-                        <a class="page-scroll" href="#share">Share</a>
+                    <li class="hidden sg-nav">
+                        <a>Share Gifts</a>
                     </li>
                 </ul>
             </div>
@@ -730,10 +730,10 @@
             $('#half').text(half);
             $('#each').text(each);
             $('#each-half').text(eachHalf);
-            $('#share-meal').on('click', function (val) {
+            $('#share-meal, .sm-nav').on('click', function (val) {
                 $('.s-scroll').attr('href', '#share');
                 $('.s-scroll').addClass('pulsate');
-                
+                $('.sm-nav').addClass('hidden');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isMeal = true;
                     
@@ -747,6 +747,7 @@
                     if(isGift) {
                         total = parseInt(giftTotal) + parseInt(dishTotal * guests);
                     } else {
+                        $('.sg-nav').removeClass('hidden');
                         total = parseInt(dishTotal * guests);
                     }
                     half = parseInt(total / 2);
@@ -755,11 +756,14 @@
                     $('#half').text(half);
                 } else {
                     isMeal = false
+                    $('.sg-nav').addClass('hidden');
+                    $('.sm-nav').removeClass('hidden');
                     if (isGift) {
                         $('.s-scroll').attr('href', '#your-gifts');
                     } else {
                         total = 0;
                         half = 0;
+                        $('.sm-nav').addClass('hidden');
                         $('#donation').addClass('hidden');
                         $('.s-scroll').removeClass('pulsate');
                         $('#total').text(total);
@@ -785,11 +789,12 @@
                 }
                 
             });
-            $('#share-gifts').on('click', function (val) {
+            $('#share-gifts, .sg-nav').on('click', function (val) {
                 $('.s-scroll').attr('href', '#share');
                 $('.s-scroll').addClass('pulsate');
                 if($.inArray('active', val.currentTarget.classList) == -1) {
                     isGift = true;
+                    $('.sg-nav').addClass('hidden');
                     $('.s-scroll').attr('href', '#your-gifts');
                     if (isMeal) {
                         $('.s-scroll').attr('href', '#guests-section');
@@ -799,6 +804,7 @@
                         total = parseInt(giftTotal);
                         $('#your-gifts').removeClass('hidden');
                         $('#your-gifts').ScrollTo();
+                        $('.sm-nav').removeClass('hidden');
                     }
                     $('#donation').removeClass('hidden');
                     $('#your-gifts').removeClass('hidden');
@@ -808,11 +814,14 @@
                     $('#half').text(half);
                 } else {
                     isGift = false;
+                    $('.sm-nav').addClass('hidden');
+                    $('.sg-nav').removeClass('hidden');
                     if (isMeal) {
                         $('.s-scroll').attr('href', '#guests-section');
                     } else {
                         total = 0;
                         half = 0;
+                        $('.sg-nav').addClass('hidden');
                         $('#donation').addClass('hidden');
                         $('.s-scroll').removeClass('pulsate');
                         $('#total').text(total);

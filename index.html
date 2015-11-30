@@ -3,6 +3,7 @@
 
 <head>
 
+
     
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Christmas for Syria" />
@@ -72,6 +73,7 @@
             border-radius: 5px;
             margin-left: 10px;
             color: #333;
+
         }
         
         
@@ -205,6 +207,7 @@
                     <li class="hidden sm-nav" onClick="$('#share-meal').addClass('active');">
                         <a>Share Meal</a>
                     </li>
+
                     <li class="hidden sg-nav" onClick="$('#share-gifts').addClass('active');">
                         <a>Share Gifts</a>
                     </li>
@@ -222,6 +225,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Christmas for Syria</h1>
+
                         <p class="intro-blurb">Share a portion of your Christmas with the families of Syria. The organizations listed have all been vetted by <a href="pri.org">PRI's The World</a></p>
                         <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
                             <label class="btn btn-default" id="share-meal">
@@ -252,6 +256,7 @@
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2>How many guests do you expect?</h2>
+
                     <input type="number" name="guests" id="guests" value="1" min="1" value="1" max="100000" />
                     <p></p>
                     <a href="#your-meal" class="btn btn-circle page-scroll">
@@ -303,12 +308,16 @@
                 <input type="checkbox" autocomplete="off" value=".75"> Gravy
             </label>
         </div>
-
         <div class="btn-group" data-toggle="buttons">
+           <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="1"> Stuffing / Dressing
+            </label>
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value=".5"> Corn
             </label>
+            
         </div>
+
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value=".75"> Beans
@@ -329,9 +338,13 @@
                 <input type="checkbox" autocomplete="off" value="1.25"> Candied Yams
             </label>
         </div>
+        
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value="1"> Sweet Potatoes
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="1.25"> Candied Yams
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
@@ -573,6 +586,7 @@
             <i class="fa fa-angle-double-down animated"></i>
         </a>-->
     </section>
+
     <section id="donation" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
         <h3>Your holiday is worth around</h3>
         <div class="col-sm-12 well well-large">
@@ -637,8 +651,8 @@
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
-                        <div class="panel-body">
-                            <a href="https://www.syriarelief.org.uk/donate/?general-donation-most-urgent" target="_blank">Syria Relief</a>
+                        <div class="panel-body" onClick="_trackEvent('orgs', 'select', 'value', total)">
+                            <a href="https://www.syriarelief.org.uk/donate/?general-donation-most-urgent" target="_blank" >Syria Relief</a>
                             <p>The largest Syria relief organization in the UK, their focus and current objective is to provide support and care to those 7.6 million internally displaced by the conflict.</p>
                             <a href="https://donate.doctorswithoutborders.org/onetime.cfm?type=tribute" target="_blank">Doctors Without Borders </a>
                             <p>While not exclusively focused on Syria, by all accounts this organization plays a vital role in helping the people affected by conflict.</p>
@@ -658,6 +672,7 @@
                             <p>Provides access to classes, supplemental education, and scholarships to Syrian children in Turkey.</p>
                             <a href="http://www.karamfoundation.org/donate" target="_blank">Karam Foundation </a>
                             <p>A US-based charity offering educational programs for displaced Syrian children. The group supports humanitarian relief projects and is raising funds to rebuild Syrian schools.</p>
+                            <button></button>
                         </div>
                     </div>
                 </div>
@@ -692,6 +707,7 @@
                     }(document, 'script', 'twitter-wjs');
                 </script>
                 <div class="clearfix"></div>
+
                 <br>
                 <span class="col-sm-10 col-sm-offset-1 text-center">The organizations listed above were vetted in <a href="http://www.pri.org/stories/2015-09-03/5-groups-doing-important-work-help-refugees-you-may-not-have-heard" target="_blank">this article</a> by <a href="http://pri.org"  target="_blank">Public Radio International</a>.</span>
                 <br>
@@ -713,6 +729,22 @@
 
     <!-- Plugin JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70338634-2', 'auto');
+        ga('send', 'pageview');
+    </script>
     <script>
         $(document).ready(function () {
             var isMeal = false;
@@ -891,24 +923,17 @@
                 $('#donation').removeClass('hidden');
 
             });
+            $('.panel-body').on('click', function() {
+                console.log(ga);
+                ga('send', {
+                  hitType: 'click',
+                  eventCategory: 'Orgs',
+                  eventAction: 'select'
+                });
+            })
         });
     </script>
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-70338634-2', 'auto');
-        ga('send', 'pageview');
-    </script>
+    
 
 
     </p>

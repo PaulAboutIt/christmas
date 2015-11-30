@@ -3,6 +3,7 @@
 
 <head>
 
+<<<<<<< HEAD
     <meta property="og:url" content="http://christmasforsyria.com" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Christmas for Syria" />
@@ -10,6 +11,15 @@
     <meta property="og:description" content="A simple way to share your Christmas with the people of Syria in the form of donation" />
     <meta property="og:image" content="http://christmasforsyria.com/img/intro-bg.jpg" />
 
+=======
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Christmas for Syria" />
+    <meta property="og:description" content="A simple way to share your Christmas with the people of Syria in the form of donation to vetted organizations on the ground." />
+    <meta property="og:image" content="http://paulaboutit.github.io/christmas/img/fb-thumb.jpg" />
+    <meta property="fb:app_id" content="961094450629430"/>
+    <meta property="og:url" content="http://christmasforsyria.org" />
+>>>>>>> gh-pages
     <title>Christmas for Syria</title>
 
     <!-- Bootstrap Core CSS -->
@@ -37,83 +47,164 @@
             background-size: cover;
             background-repeat: no-repeat;
         }
-        
+        h1 {
+                line-height: 90px;
+        }
+        h2 {
+            white-space: normal;
+        }
+        .sg-nav, .sm-nav {
+            cursor: pointer
+        }
+        .choose-type label{
+            
+            background: hsla(0,0%,100%,.4);
+        }
+        .choose-type.btn-group{
+            margin: 0px;
+        }
+        .choose-type label.active{
+            background: #fefefe;
+        }
+        .choose-type label{
+            border-color: #999;
+        }
+        .choose-type label p{
+            margin-bottom: 15px;
+        }
+        .choose-type label h2{
+            color: #222;
+            margin: 20px 0px 0px;
+        }
         #guests {
             font-size: 30px;
             text-align: right;
             border-radius: 5px;
             margin-left: 10px;
             color: #333;
+<<<<<<< HEAD
             
         }
         #donation {
             margin-bottom: 200px;
+=======
+>>>>>>> gh-pages
         }
+        
+        
+        
         .well {
             background: #333;
         }
+        
         .well div h2 {
             margin-bottom: 5px;
         }
+        
         .well div {
             margin-bottom: 20px;
         }
+        .panel {
+            background: none;
+        }
         .panel-body {
-            background: #111;
+            background: hsla(0,0%,0%,.6);
         }
+        
         .btn-group {
-            margin: 15px ;
+            margin: 15px;
         }
-        .btn-group-vertical>.btn, .btn-group>.btn{
+        
+        
+        .btn-group-vertical>.btn,
+        .btn-group>.btn {
             font-size: 35px;
         }
+        .btn-group input[type="number"] {
+            font-size: 29px;
+        }
+        
         .panel-body a {
             font-size: 35px;
-            font-family:'Montserrat';
+            font-family: 'Montserrat';
         }
+        
         .panel-title a {
             font-size: 25px;
-            font-family:'Montserrat';
+            font-family: 'Montserrat';
         }
+        
         .twitter-share-button {
             margin-top: 21px;
             transform: scale(2.5);
--ms-transform: scale(2.5);
--webkit-transform: scale(2.5);
--o-transform: scale(2.5);
--moz-transform: scale(2.5);
-transform-origin: top right;
--ms-transform-origin: top right;
--webkit-transform-origin: top right;
--moz-transform-origin: top right;
--webkit-transform-origin: top right;
+            -ms-transform: scale(2.5);
+            -webkit-transform: scale(2.5);
+            -o-transform: scale(2.5);
+            -moz-transform: scale(2.5);
+            transform-origin: top right;
+            -ms-transform-origin: top right;
+            -webkit-transform-origin: top right;
+            -moz-transform-origin: top right;
+            -webkit-transform-origin: top right;
         }
-        .fb-share-button
-{
-        display: inline-block !important;
-    margin-top: 20px;
-    margin-bottom: 40px;
-transform: scale(2.5);
--ms-transform: scale(2.5);
--webkit-transform: scale(2.5);
--o-transform: scale(2.5);
--moz-transform: scale(2.5);
-transform-origin: top left;
--ms-transform-origin: top left;
--webkit-transform-origin: top left;
--moz-transform-origin: top left;
--webkit-transform-origin: top left;
-}
+        
+        .fb-share-button {
+            display: inline-block !important;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            transform: scale(2.5);
+            -ms-transform: scale(2.5);
+            -webkit-transform: scale(2.5);
+            -o-transform: scale(2.5);
+            -moz-transform: scale(2.5);
+            transform-origin: top left;
+            -ms-transform-origin: top left;
+            -webkit-transform-origin: top left;
+            -moz-transform-origin: top left;
+            -webkit-transform-origin: top left;
+        }
+        .s-scroll {
+            opacity: 0;
+            
+        }
+        .pulsate {
+            -webkit-animation: pulsate 2s ease-out;
+            -webkit-animation-iteration-count: infinite; 
+            
+        }
+        @-webkit-keyframes pulsate {
+            0% {-webkit-transform: scale(1, 1); opacity: 0.7; background: hsla(0,0%,100%,0)}
+            50% {-webkit-transform: scale(1.05, 1.05); opacity: 1; background: hsla(0,0%,100%,.2)}
+            100% {-webkit-transform: scale(1, 1); opacity: 0.7; background: hsla(0,0%,100%,0)}
+        }
+        
     </style>
 
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="fb-root"></div>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '961094450629430',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top hidden-xs" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header hidden-xs">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -128,17 +219,19 @@ transform-origin: top left;
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#guests-section">Guests</a>
+                    <li class="hidden sm-nav" onClick="$('#share-meal').addClass('active');">
+                        <a>Share Meal</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#your-meal">Your Meal</a>
-                    </li>
+<<<<<<< HEAD
                     <li>
                         <a class="page-scroll" href="#donation">Donation</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#share">Share</a>
+=======
+                    <li class="hidden sg-nav" onClick="$('#share-gifts').addClass('active');">
+                        <a>Share Gifts</a>
+>>>>>>> gh-pages
                     </li>
                 </ul>
             </div>
@@ -154,8 +247,25 @@ transform-origin: top left;
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">Christmas for Syria</h1>
+<<<<<<< HEAD
                         <p class="intro-text">A simple way to share your Christmas with the people of Syria and the surrounding region.</p>
                         <a href="#guests-section" class="btn btn-circle page-scroll">
+=======
+                        <p class="intro-blurb">Share a portion of your Christmas with the families of Syria. The organizations listed have all been vetted by <a href="pri.org">PRI's The World</a></p>
+                        <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" id="share-meal">
+                                <input type="checkbox" autocomplete="off" value="0"><h2>Share the value of your meal</h2>
+                                <p>click here</p>
+                            </label>
+                        </div>
+                        <div class="choose-type col-xs-6 btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" id="share-gifts">
+                                <input type="checkbox" autocomplete="off" value="0"><h2>Share the value of your gifts</h2>
+                                <p>click here</p>
+                            </label>
+                        </div>
+                        <a href="#share" class="btn btn-circle page-scroll s-scroll">
+>>>>>>> gh-pages
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
                     </div>
@@ -163,43 +273,38 @@ transform-origin: top left;
             </div>
         </div>
     </header>
-     <div id="fb-root"></div>
-    <script>
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '537852649703554',
-                xfbml: true,
-                version: 'v2.5'
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
     
+
+
     <!-- Download Section -->
-    <section id="guests-section" class="content-section text-center">
+    <section id="guests-section" class="content-section text-center hidden">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2>How many guests do you expect?</h2>
+<<<<<<< HEAD
                     <input type="number" name="guests" id="guests" value="1" min="1" value="1" max="100000"/>
+=======
+                    <input type="number" name="guests" id="guests" value="1" min="1" value="1" max="100000" />
+>>>>>>> gh-pages
                     <p></p>
                     <a href="#your-meal" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
     </section>
+<<<<<<< HEAD
     <section id="your-meal" class="content-section  text-center col-sm-10 col-sm-offset-1">
         <h2>What food are you serving?</h2>
+=======
+    
+    <section id="your-meal" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
+        <h2>What are you serving?</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="4"> Organic
+            </label>
+        </div>
+>>>>>>> gh-pages
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" id="goose" value="5.5"> Goose
@@ -210,9 +315,14 @@ transform-origin: top left;
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" id="duck" value="5"> Duck
             </label>
+<<<<<<< HEAD
             
+=======
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+>>>>>>> gh-pages
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value="2"> Organic
+                <input type="checkbox" autocomplete="off" value="4"> Roast Beef
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
@@ -222,12 +332,26 @@ transform-origin: top left;
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
+<<<<<<< HEAD
                 <input type="checkbox" autocomplete="off" value="4"> Roast Beef
+=======
+                <input type="checkbox" autocomplete="off" value="4.5"> Ribs
+>>>>>>> gh-pages
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
+<<<<<<< HEAD
                 <input type="checkbox" autocomplete="off" value="4.5"> Ribs
+=======
+                <input type="checkbox" autocomplete="off" value="1"> Stuffing
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="1.5"> Potatoes
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value=".75"> Gravy
+>>>>>>> gh-pages
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
@@ -235,27 +359,44 @@ transform-origin: top left;
                 <input type="checkbox" autocomplete="off" value="1"> Stuffing / Dressing
             </label>
             <label class="btn btn-default">
+<<<<<<< HEAD
                 <input type="checkbox" autocomplete="off" value="1.5"> Potatoes
             </label>
             <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value=".75"> Gravy
+=======
+                <input type="checkbox" autocomplete="off" value=".5"> Corn
+>>>>>>> gh-pages
             </label>
             
         </div>
 
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value="1"> Corn
+                <input type="checkbox" autocomplete="off" value=".75"> Beans
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
+<<<<<<< HEAD
                 <input type="checkbox" autocomplete="off" value="1"> Cheese &amp; Crackers
+=======
+                <input type="checkbox" autocomplete="off" value=".60"> Greens
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value=".75"> Casserole
+>>>>>>> gh-pages
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+<<<<<<< HEAD
                 <input type="checkbox" autocomplete="off" value=".5"> Cookies
+=======
+                <input type="checkbox" autocomplete="off" value="1.25"> Candied Yams
+>>>>>>> gh-pages
             </label>
         </div>
         
@@ -269,17 +410,27 @@ transform-origin: top left;
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value=".75"> Casserole
-            </label>
-        </div>
-        
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
                 <input type="checkbox" autocomplete="off" value=".5"> Cranberry Sauce
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value=".5"> Cornbread
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value=".5"> Biscuits
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+<<<<<<< HEAD
+=======
+                <input type="checkbox" autocomplete="off" value="1"> Cheese &amp; Crackers
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+>>>>>>> gh-pages
                 <input type="checkbox" autocomplete="off" value="2.5"> Wine
             </label>
             <label class="btn btn-default">
@@ -291,44 +442,232 @@ transform-origin: top left;
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value=".5"> Fruit Salad
-            </label>
-        </div>
-
-        <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value=".5"> Cornbread
-            </label>
-            <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value=".5"> Biscuits
+                <input type="checkbox" autocomplete="off" value=".5"> Cookies
             </label>
         </div>
         <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value="1.5"> Pumpkin Pie
+                <input type="checkbox" autocomplete="off" value="2"> Cake
             </label>
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value="1.5"> Apple Pie
+                <input type="checkbox" autocomplete="off" value="1.5"> Pie
             </label>
             <label class="btn btn-default">
-                <input type="checkbox" autocomplete="off" value="1.5"> Sweet Potato Pie
+                <input type="checkbox" autocomplete="off" value="1.5"> Muffins
             </label>
         </div>
         <p></p>
-        <a href="#total-section" class="btn btn-circle page-scroll">
+        <!--<a href="#donation" class="btn btn-circle page-scroll">
             <i class="fa fa-angle-double-down animated"></i>
-        </a>
+        </a>-->
     </section>
+    <section id="your-gifts" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
+        <h2>What will be under your tree?</h2>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="400"> Game Console
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="40"> Video Game
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="400"> Drone
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Camera
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="60"> Sled
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="90"> Bicycle
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="10"> Action Figure
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Plush Toy
+            </label>
+            
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="10"> Doll
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="200"> Instrument
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="5"> Comic Book 
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Smart Phone
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="25"> Stocking Stuffers
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="40">Toy Train
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="300"> Tablet
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="goose" value="45"> Shirts
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="turkey" value="40"> Pants
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" id="duck" value="50"> Sweater
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="40"> Pajamas
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Scarf
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Chocolate
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="60"> Fragrance
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="50"> Gift Card
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="25"> Blocks
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Slippers
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="60"> Shoes
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="25"> Neck Tie
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="35"> Book
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="150"> Event Tickets
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Music
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="20"> Movie
+            </label>
+        </div>
+        
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="350"> TV
+            </label>
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="1100"> Big Screen
+            </label>
+            
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="100"> Watch
+            </label>
+        </div>
+        <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default">
+                    <input type="checkbox" autocomplete="off" value="150"> Jewelry
+                </label>
+                <label class="btn btn-default">
+                    <input type="checkbox" autocomplete="off" value="700"> Diamond
+                </label>
+            </div>
+        <!--<div class="clearfix"></div>
+        <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default">
+                <input type="checkbox" autocomplete="off" value="0">Gift Cards
+            </label>
+            <label class="btn btn-default">
+                <input type="number" style="width:100px;" autocomplete="off" max="100" min="0" placeholder="# of"> 
+            </label>
+        </div>-->
+        <p></p>
+        <!--<a href="#donation" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>-->
+    </section>
+<<<<<<< HEAD
     <section id="donation" class="content-section  text-center col-sm-10 col-sm-offset-1">
         <h3>Your meal is worth</h3>
+=======
+    <section id="donation" class="content-section  text-center col-sm-10 col-sm-offset-1 hidden">
+        <h3>Your holiday is worth around</h3>
+>>>>>>> gh-pages
         <div class="col-sm-12 well well-large">
-            <div class="col-sm-6">
-                <h2>Total $<span id="total"></span>.00</h2>
-                <span>collect $<span id="each"></span>.00 from each guest</span>
+            <div class="col-sm-4">
+                <h2>Total<br> $<span id="total"></span>.00</h2>
+                <span id="each-span1" class="hidden">$<span id="each"></span>.00 for each meal</span>
             </div>
-            <div class="col-sm-6">
-                <h2>Half $<span id="half"></span>.00</h2>
-                <span>collect $<span id="each-half"></span>.00 from each guest</span>
+            <div class="col-sm-4">
+                <h2>Half<br> $<span id="half"></span>.00</h2>
+                <span id="each-span2" class="hidden">$<span id="each-half"></span>.00 for each meal</span>
+            </div>
+            <div class="col-sm-4">
+                <h2>10%<br> $<span id="tithe"></span>.00</h2>
             </div>
         </div>
         <p></p>
@@ -339,9 +678,9 @@ transform-origin: top left;
     </section>
 
     <!-- Contact Section -->
-    <section id="share" class=" col-sm-10 col-sm-offset-1">
+    <section id="share" class="content-section col-sm-10 col-sm-offset-1">
         <div class="col-sm-12">
-            <h3>Ways to share</h3>
+            <h3>Ways to help</h3>
             <div class="panel-group" id="accordion">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -354,7 +693,7 @@ transform-origin: top left;
                         <div class="panel-body">
                             <a href="http://www.moas.eu/donate" target="_blank">Migrant Offshore Aid Station</a>
                             <p>This charity has a fleet of rescue boats patrolling the Mediterranean to save migrants and prevent catastrophes at sea.</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -367,7 +706,7 @@ transform-origin: top left;
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
                             <a href="https://www.betterplace.org/en/projects/25731-refugees-welcome/donations/new#wcp" target="_blank">Refugees Welcome</a>
-                            <p>This charitable organization matches people with spare rooms  in more than 20 countries with refugees who need housing.</p>
+                            <p>This charitable organization matches people with spare rooms in more than 20 countries with refugees who need housing.</p>
                             <a href="http://www.handinhandforsyria.org.uk/donate" target="_blank">Hand in Hand for Syria </a>
                             <p>This aid agency works directly inside Syria to deliver food, clothing, blankets, water, sanitation and medical assistance. The group aims to prevent people from fleeing Syria and helps them stay.</p>
                         </div>
@@ -388,7 +727,11 @@ transform-origin: top left;
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> gh-pages
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -418,11 +761,32 @@ transform-origin: top left;
                     </div>
                 </div>
                 <br>
-                <span class="col-sm-10 col-sm-offset-1" >The organizations listed above were vetted in <a href="http://www.pri.org/stories/2015-09-03/5-groups-doing-important-work-help-refugees-you-may-not-have-heard" target="_blank">this article</a> by <a href="http://pri.org"  target="_blank">Public Radio International</a> except Operation Refugee Child.</span>
+                
                 <div class="clearfix"></div>
+                <div class="fb-share-button" data-href="http://Christmasforsyria.com" data-layout="button_count"></div>
+                <div class="pull-right"><a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://Christmasforsyria.com" data-text="Share your Christmas with the families of Syria" data-via="ThanksForSyria" data-hashtags="ChristmasForSyria">Tweet</a></div>
+                <script>
+                    ! function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');
+                </script>
+                <div class="clearfix"></div>
+<<<<<<< HEAD
                 <div class="fb-share-button" data-href="http://Christmasforsyria.com" data-layout="button_count"></div>
                 <div class="pull-right"><a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://Christmasforsyria.com" data-text="Share your Christmas with the families of Syria" data-via="ThanksForSyria" data-hashtags="ChristmasForSyria">Tweet</a></div>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+=======
+                <br>
+                <span class="col-sm-10 col-sm-offset-1 text-center">The organizations listed above were vetted in <a href="http://www.pri.org/stories/2015-09-03/5-groups-doing-important-work-help-refugees-you-may-not-have-heard" target="_blank">this article</a> by <a href="http://pri.org"  target="_blank">Public Radio International</a>.</span>
+                <br>
+>>>>>>> gh-pages
             </div>
 
         </div>
@@ -432,10 +796,24 @@ transform-origin: top left;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="dist/js/bootstrap.min.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-scrollto.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
     <script>
         $(document).ready(function () {
+            var isMeal = false;
+            var isGift = false;
+            var nextSection = '#share'
             var guests = 1;
             var dishTotal = 0;
+            var dishHalf = 0;
+            var giftTotal = 0;
             var total = 0
             var half = 0;
             var each = 0;
@@ -444,16 +822,128 @@ transform-origin: top left;
             $('#half').text(half);
             $('#each').text(each);
             $('#each-half').text(eachHalf);
+            $('#share-meal, .sm-nav').on('click', function (val) {
+                $('.s-scroll').attr('href', '#share');
+                $('.s-scroll').addClass('pulsate');
+                $('.sm-nav').addClass('hidden');
+                if($.inArray('active', val.currentTarget.classList) == -1) {
+                    isMeal = true;
+                    
+                    $('.s-scroll').attr('href', '#guests-section');
+                    $('#donation').removeClass('hidden');
+                    $('#your-meal').removeClass('hidden');
+                    $('#guests-section').removeClass('hidden');
+                    $('#guests-section').ScrollTo();
+                    $('#each-span1').removeClass('hidden');
+                    $('#each-span2').removeClass('hidden');
+                    if(isGift) {
+                        total = parseInt(giftTotal) + parseInt(dishTotal * guests);
+                    } else {
+                        $('.sg-nav').removeClass('hidden');
+                        total = parseInt(dishTotal * guests);
+                    }
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
+                } else {
+                    isMeal = false
+                    $('.sg-nav').addClass('hidden');
+                    $('.sm-nav').removeClass('hidden');
+                    if (isGift) {
+                        $('.s-scroll').attr('href', '#your-gifts');
+                    } else {
+                        total = 0;
+                        half = 0;
+                        $('.sm-nav').addClass('hidden');
+                        $('#donation').addClass('hidden');
+                        $('.s-scroll').removeClass('pulsate');
+                        $('#total').text(total);
+                        $('#tithe').text(parseInt(total/10));
+                        $('#half').text(half);
+                        $('#your-meal').addClass('hidden');
+                        $('#guests-section').addClass('hidden');
+                        $('#each-span1').addClass('hidden');
+                        $('#each-span2').addClass('hidden');
+                        return
+                    }
+                    $('#your-meal').addClass('hidden');
+                    $('#guests-section').addClass('hidden');
+                    $('#each-span1').addClass('hidden');
+                    $('#each-span2').addClass('hidden');
+                    total = parseInt(giftTotal);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
+                    if (isGift) 
+                        $('#your-gifts').ScrollTo();
+                }
+                
+            });
+            $('#share-gifts, .sg-nav').on('click', function (val) {
+                $('.s-scroll').attr('href', '#share');
+                $('.s-scroll').addClass('pulsate');
+                if($.inArray('active', val.currentTarget.classList) == -1) {
+                    isGift = true;
+                    $('.sg-nav').addClass('hidden');
+                    $('.s-scroll').attr('href', '#your-gifts');
+                    if (isMeal) {
+                        $('.s-scroll').attr('href', '#guests-section');
+                        $('#guests-section').ScrollTo();
+                        total = parseInt(dishTotal * guests) + parseInt(giftTotal);
+                    } else {
+                        total = parseInt(giftTotal);
+                        $('#your-gifts').removeClass('hidden');
+                        $('#your-gifts').ScrollTo();
+                        $('.sm-nav').removeClass('hidden');
+                    }
+                    $('#donation').removeClass('hidden');
+                    $('#your-gifts').removeClass('hidden');
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
+                } else {
+                    isGift = false;
+                    $('.sm-nav').addClass('hidden');
+                    $('.sg-nav').removeClass('hidden');
+                    if (isMeal) {
+                        $('.s-scroll').attr('href', '#guests-section');
+                    } else {
+                        total = 0;
+                        half = 0;
+                        $('.sg-nav').addClass('hidden');
+                        $('#donation').addClass('hidden');
+                        $('.s-scroll').removeClass('pulsate');
+                        $('#total').text(total);
+                        $('#tithe').text(parseInt(total/10));
+                        $('#half').text(half);
+                        $('#your-gifts').addClass('hidden');
+                        return
+                    }
+                    $('#your-gifts').addClass('hidden');
+                    total = parseInt(dishTotal * guests);
+                    half = parseInt(total / 2);
+                    $('#total').text(total);
+                    $('#tithe').text(parseInt(total/10));
+                    $('#half').text(half);
+                    if (isMeal)
+                        $('#guests-section').ScrollTo();
+                }
+            });
             $('#guests').on('change', function () {
                 guests = $('#guests').val();
-                total = parseInt(dishTotal * guests);
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                 half = parseInt(total / 2);
-                each = parseInt(total / guests);
-                eachHalf = parseInt(half / guests);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal / 2);
                 $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
                 $('#half').text(half);
                 $('#each').text(each);
                 $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
             })
             $('#your-meal div label').on('click', function (val) {
                 if ($.inArray('active', val.currentTarget.classList) == -1) {
@@ -461,20 +951,38 @@ transform-origin: top left;
                 } else {
                     dishTotal -= parseFloat(val.currentTarget.childNodes[1].value);
                 }
-                console.log(dishTotal, guests)
                 guests = parseInt(guests);
-                total = parseInt(dishTotal * guests);
-                console.log(total, 'tot');
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
                 half = parseInt(total / 2);
-                each = parseInt(total / guests);
-                console.log(total, guests, each, 'each');
-                eachHalf = parseInt(half / guests);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal/2);
                 $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
                 $('#half').text(half);
                 $('#each').text(each);
                 $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
 
             })
+            $('#your-gifts div label').on('click', function (val) {
+                if ($.inArray('active', val.currentTarget.classList) == -1) {
+                    giftTotal += parseFloat(val.currentTarget.childNodes[1].value);
+                } else {
+                    giftTotal -= parseFloat(val.currentTarget.childNodes[1].value);
+                }
+                guests = parseInt(guests);
+                total = parseInt(dishTotal * guests) + parseInt(giftTotal);
+                half = parseInt(total / 2);
+                each = parseInt(dishTotal);
+                eachHalf = parseInt(dishTotal/2);
+                $('#total').text(total);
+                $('#tithe').text(parseInt(total/10));
+                $('#half').text(half);
+                $('#each').text(each);
+                $('#each-half').text(eachHalf);
+                $('#donation').removeClass('hidden');
+
+            });
         });
     </script>
     <script>
@@ -490,27 +998,20 @@ transform-origin: top left;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-70338634-1', 'auto');
+        ga('create', 'UA-70338634-2', 'auto');
         ga('send', 'pageview');
     </script>
-    
-            
-                </p>
-               
-            </div>
-        </div>
+
+
+    </p>
+
+    </div>
+    </div>
     </section>
 
-   
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <script src="dist/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
+    
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
